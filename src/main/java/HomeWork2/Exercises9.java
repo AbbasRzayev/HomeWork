@@ -18,6 +18,8 @@ public class Exercises9 {
         kitap.put("Yazılamamış Destanlar","Mehmed Niyazi ");
 
         String[] check= {"benim","orhan"};
+        String test = "asd";
+
 
 
 

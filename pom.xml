@@ -13,7 +13,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-<<<<<<< HEAD
+
     <dependencies>
         <dependency>
             <groupId>org.apache.xbean</groupId>
@@ -21,7 +21,5 @@
             <version>3.7</version>
         </dependency>
     </dependencies>
-=======
->>>>>>> 4c858cadf64f3f4c243c93bf2585bc54a395be9d
 
 </project>

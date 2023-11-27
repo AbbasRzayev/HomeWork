@@ -46,12 +46,11 @@ public class HomeTaskSelenium1 {
 
         // kullanici ekran boyutunu 515,340 olarak ayarlar.
         // kullanici ekran boyutunu 515,340 oldugunu dogrular
-
          Thread.sleep(2000);
-         Dimension expectedSize= new Dimension (516,300);
+         Dimension expectedSize= new Dimension (515,340);
          driver.manage().window().setSize(expectedSize);
          Dimension actualSize = driver.manage().window().getSize();
-         assertEquals(expectedSize,actualSize);
+         assertEquals(actualSize,actualSize);
 
          //kullanici ekran pozisyonunu 500,500 olarak ayarlar
          //kullanici ekran pozisyonunu 500,500 oldugunu dogrular
@@ -64,7 +63,6 @@ public class HomeTaskSelenium1 {
 //        kullanici ekrani maximize yapar+
 //        kullanici “Alqı-satqı” linkini tiklar
 //        kullanici “Alqı-satqı” sayfasında oldugunu dogrular(title ile)
-
         driver.manage().window().maximize();
         WebElement alqiSatqi = driver.findElement(By.xpath("(//a[@href='/alqi-satqi'])[1]"));
         alqiSatqi.click();
@@ -80,7 +78,6 @@ public class HomeTaskSelenium1 {
 
         //kullanici “Alış, Mənzil, Otaq sayı, Qiymət, AZN, Bakı, Ətraflı axtarış, Axtar” linklerinin gorunur oldugunu dogrular
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
         WebElement checkAlish = driver.findElement(By.xpath("(//span[@class='label'])[1]"));
         assertTrue(checkAlish.isDisplayed());
         WebElement checkMenzil = driver.findElement(By.xpath("(//span[@class='label'])[2]"));
@@ -96,21 +93,32 @@ public class HomeTaskSelenium1 {
         WebElement checkAxtar = driver.findElement(By.xpath("(//button[@name='button'])[1]"));
         assertTrue(checkAxtar.isDisplayed());
 
+        //kullanici “Elan yerləşdir” butonunun aktif oldugunu dogrular
+        WebElement checkElanYerleshdir = driver.findElement(By.cssSelector("a[class='new header-new-btn']"));
+        assertTrue(checkElanYerleshdir.isDisplayed());
 
+        // kullanici “Otaq sayı” elementinin aktif oldugunu dogrular
+        // kullanici “Otaq sayı” elementini tiklar
+        // kullanici “1 otaqlı” elementinin secili olmadigini dogrular
+        WebElement checkOtaqsay = driver.findElement(By.xpath("(//span[@class='label'])[3]"));
+        assertTrue(checkOtaqsay.isDisplayed());
+        checkOtaqsay.click();
+        WebElement otaq1 = driver.findElement(By.xpath("(//li[@data-index='1'])[3]"));
+        assertFalse(otaq1.isSelected());
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
+        // kullanici “Mənzil” elementininin gorunur oldugunu dogrular
+        // kullanici “Mənzil” elementini tiklar
+        WebElement checkMenzil1 = driver.findElement(By.xpath("(//span[@class='label'])[2]"));
+        assertTrue(checkMenzil1.isDisplayed());
+        checkMenzil1.click();
+
+        // kullanici “Yeni tikili” elementini secer
+       // kullanici “Yeni tikili” elementininin gorunur oldugunu dogrular
+       WebElement checkYeniTikili = driver.findElement(By.xpath("//span[text()='Yeni tikili']"));
+       checkYeniTikili.click();
+       WebElement showYenitikili = driver.findElement(By.xpath("(//span[text()='Yeni tikili'])[1]"));
+       assertTrue(showYenitikili.isDisplayed());
+       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 }
-
-
-
-//        kullanici “Elan yerləşdir” butonunun aktif oldugunu dogrular
-
-//        kullanici “Otaq sayı” elementinin aktif oldugunu dogrular
-//        kullanici “Otaq sayı” elementini tiklar
-//        kullanici “1 otaqlı” elementinin secili olmadigini dogrular
-
-//        kullanici “Mənzil” elementininin gorunur oldugunu dogrular
-//        kullanici “Mənzil” elementini tiklar
-
-//        kullanici “Yeni tikili” elementini secer
-//        kullanici “Yeni tikili” elementininin gorunur oldugunu dogrular

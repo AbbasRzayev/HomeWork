@@ -3,6 +3,7 @@ package HomeWork2;
 import java.util.Scanner;
 
 public class Exercises4 {
+
     public static void main(String[] args) {
         //Kullanıcının verdiği yaşı kontrol edip yaş 18 den küçükse “Yaşınız 18’den küçük olduğu için giriş yapamazsınız”, yaş 50’den aşağı ise “Siteyi kullanabilirsiniz”, yaş 50’den yukarı ise “Yaşınız siteye girmek için çok yüksek” diye mesaj yazdıran metot yazınız.
 

@@ -41,7 +41,18 @@
             <artifactId>cucumber-java</artifactId>
             <version>7.14.0</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>4.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>4.15.0</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 

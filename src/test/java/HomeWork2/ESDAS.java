@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Set;
 
 public class ESDAS {
     @Test
@@ -51,13 +52,17 @@ public class ESDAS {
         Thread.sleep(200);
         esdasDaxil.click();
 
-//        WebElement karguzar;
-//        karguzar = new WebDriverWait(driver,Duration.ofSeconds(200)).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/main/div/main/div/div[2]/div[2]/div[2]/div/div/div/div/div[4]/div/div")));
-//        karguzar.click();
+        Thread.sleep(200);
+        Set<String> windowHandles = driver.getWindowHandles();
+        for (String windowHandle : windowHandles) {
+            driver.switchTo().window(windowHandle);
 
-        WebElement element = driver.findElement(By.xpath(""));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        }
+        String url=driver.getCurrentUrl();
+        System.out.println("windowHandles = " + url);
 
-
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement karguzar = wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/main/div/main/div/div[1]/div[1]/form/button[1]/img")));
+        karguzar.click();
     }
 }

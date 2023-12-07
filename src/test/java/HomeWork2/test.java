@@ -57,7 +57,5 @@ public class test {
             }
         WebElement testiq1 =driver.findElement(By.xpath("//*[@id=\"confirm-information\"]"));
         testiq1.click();
-
-
     }
 }

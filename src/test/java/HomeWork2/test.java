@@ -18,7 +18,6 @@ public class test {
     public void name() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
-
         driver.manage().window().maximize();
         driver.get("https://test.e-reqabet.az/v2");
         WebElement daxilOL = driver.findElement(By.xpath("//div[@class='hero_circle__53qyR hero_n_4_16__JoKnb']"));
@@ -48,19 +47,15 @@ public class test {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
         WebElement mensheEnter = driver.findElement(By.xpath("(//div[@class='cursor-pointer e-service-card_card__e_kP0'])[4]"));
         mensheEnter.click();
-
         WebElement tanisliq = driver.findElement(By.xpath("(//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-ygcd3b'])[2]"));
         tanisliq.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
         Thread.sleep(2000);
-
-
         Set<String> windowHandles = driver.getWindowHandles();
             for (String windowHandle : windowHandles) {
                 driver.switchTo().window(windowHandle);
             }
         WebElement testiq1 =driver.findElement(By.xpath("//*[@id=\"confirm-information\"]"));
-
         testiq1.click();
 
 

@@ -95,13 +95,13 @@ public class HomeTaskSelenium1 {
 
         //kullanici “Elan yerləşdir” butonunun aktif oldugunu dogrular
         WebElement checkElanYerleshdir = driver.findElement(By.cssSelector("a[class='new header-new-btn']"));
-        assertTrue(checkElanYerleshdir.isDisplayed());
+        assertTrue(checkElanYerleshdir.isEnabled());
 
         // kullanici “Otaq sayı” elementinin aktif oldugunu dogrular
         // kullanici “Otaq sayı” elementini tiklar
         // kullanici “1 otaqlı” elementinin secili olmadigini dogrular
         WebElement checkOtaqsay = driver.findElement(By.xpath("(//span[@class='label'])[3]"));
-        assertTrue(checkOtaqsay.isDisplayed());
+        assertTrue(checkOtaqsay.isEnabled());
         checkOtaqsay.click();
         WebElement otaq1 = driver.findElement(By.xpath("(//li[@data-index='1'])[3]"));
         assertFalse(otaq1.isSelected());

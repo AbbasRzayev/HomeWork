@@ -1,4 +1,4 @@
-package HomeWork2;
+package RealProjectPractice;
 
 import java.util.Scanner;
 

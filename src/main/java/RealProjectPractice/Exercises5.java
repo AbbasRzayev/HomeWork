@@ -1,4 +1,4 @@
-package HomeWork2;
+package RealProjectPractice;
 
 public class Exercises5 {
     public static void main(String[] args) {

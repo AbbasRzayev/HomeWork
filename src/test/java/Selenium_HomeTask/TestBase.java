@@ -46,12 +46,12 @@ public class TestBase {
         extentTest=extentReports.createTest("ExtentTest","Test Raporu");
     }
 
-    @After
-    public void teardown() throws InterruptedException {
-        Thread.sleep(2000);
-        driver.close();
-        extentReports.flush();
-    }
+//    @After
+//    public void teardown() throws InterruptedException {
+//        Thread.sleep(2000);
+//        driver.close();
+//        extentReports.flush();
+//    }
 
 
     @Test
@@ -61,7 +61,7 @@ public class TestBase {
 
 
     }
-    public static void AssertUrlCheck(String url1, String url2)
+    public static void AssertCheck(String url1, String url2)
     {
         assertEquals(url1,url2);
     }
@@ -70,6 +70,13 @@ public class TestBase {
     {
         assertTrue(elem.isDisplayed());
     }
+    public static void AssertIsSelected(WebElement element){
+        assertTrue(element.isDisplayed());
+    }
 
+    public static void clickButton(WebElement buttonName)
+    {
+        buttonName.click();
+    }
 }
 

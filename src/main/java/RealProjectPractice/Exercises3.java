@@ -1,6 +1,5 @@
-package HomeWork2;
+package RealProjectPractice;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Exercises3 {

@@ -1,8 +1,11 @@
 package Selenium_HomeTask;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,7 +33,7 @@ public class TestBase {
        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 
-       // driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
+        driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         extentReports = new ExtentReports();
@@ -46,16 +49,16 @@ public class TestBase {
         extentTest=extentReports.createTest("ExtentTest","Test Raporu");
     }
 
-//    @After
-//    public void teardown() throws InterruptedException {
-//        Thread.sleep(2000);
-//        driver.close();
-//        extentReports.flush();
-//    }
+    @After
+    public void teardown() throws InterruptedException {
+        Thread.sleep(2000);
+        driver.close();
+        extentReports.flush();
+    }
 
 
     @Test
-    public void name() {
+    public void name() throws InterruptedException {
 
 
 
@@ -71,12 +74,22 @@ public class TestBase {
         assertTrue(elem.isDisplayed());
     }
     public static void AssertIsSelected(WebElement element){
-        assertTrue(element.isDisplayed());
+        Boolean isSelected = (Boolean) ((JavascriptExecutor) driver).executeScript("return arguments[0].classList.contains('selected');", element);
+        Assert.assertTrue("Agdam secimi - secilmishdir", isSelected);
+
     }
 
     public static void clickButton(WebElement buttonName)
     {
         buttonName.click();
+    }
+
+    public static void clearInputText(WebElement elem)
+    {
+        int textLength = elem.getAttribute("value").length();
+        for (int i = 0; i < textLength; i++) {
+            elem.sendKeys(Keys.BACK_SPACE);
+        }
     }
 }
 

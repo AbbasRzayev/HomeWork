@@ -1,7 +1,9 @@
 package Selenium_HomeTask;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -9,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 public class Lalafo extends TestBase{
     @Test
-    public void name() {
+    public void name() throws InterruptedException {
 
         driver.get("https://lalafo.az/");
         extentTest.info("Lalafo saytina girish");
@@ -23,21 +25,27 @@ public class Lalafo extends TestBase{
         clickButton(girish);
         WebElement emailAdress = driver.findElement(By.cssSelector("input[class='LFInput__input error']"));
         emailAdress.sendKeys("aaaaaaa.aaa.aaa");
-        emailAdress.sendKeys(Keys.DELETE);
-        emailAdress.clear(); //Lakin silmiyor
+        emailAdress.sendKeys(Keys.CLEAR);
+       // clearInputText(emailAdress);
+        Thread.sleep(2000);
         emailAdress.sendKeys("@@@@@.com");
-        emailAdress.clear(); //Lakin silmiyor
+        clearInputText(emailAdress);
+        Thread.sleep(2000);
         emailAdress.sendKeys("asdasd.asdas");
-        emailAdress.clear(); //Lakin silmiyor
+        clearInputText(emailAdress);
+        Thread.sleep(2000);
         emailAdress.sendKeys("test,asd");
 
         WebElement password = driver.findElement(By.xpath("//input[@type='password'] "));
         password.sendKeys("asdasd");
-        password.clear();
+        clearInputText(password);
+        Thread.sleep(2000);
         password.sendKeys("asdasd");
-        password.clear();
+        clearInputText(password);
+        Thread.sleep(2000);
         password.sendKeys("asdasd");
-        password.clear();
+        clearInputText(password);
+        Thread.sleep(2000);
         password.sendKeys("asdasd");
 
 
@@ -57,21 +65,9 @@ public class Lalafo extends TestBase{
         WebElement sheherSec = driver.findElement(By.xpath("//div[@class='select-with-search']"));
         clickButton(sheherSec);
 
-        WebElement agdamSec = driver.findElement(By.xpath("(//li[@class='select-dropdown__list-item '])[6]"));
-        clickButton(agdamSec);
-
-        String expectedCity = "Ağdam";
-
-
-
-
-
-
-
-
-
-
-
-
+        WebElement agdamSecim = driver.findElement(By.xpath("(//li[@class='select-dropdown__list-item '])[6]"));
+        clickButton(agdamSecim);
+        AssertIsSelected(agdamSecim);
+        extentTest.info("Kullanıcı Ağdam seçtiğini doğrular.");
     }
 }

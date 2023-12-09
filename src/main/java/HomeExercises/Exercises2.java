@@ -1,4 +1,4 @@
-package RealProjectPractice;
+package HomeExercises;
 
 import java.util.ArrayList;
 import java.util.List;

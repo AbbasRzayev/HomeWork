@@ -1,4 +1,4 @@
-package RealProjectPractice;
+package HomeExercises;
 
 import java.util.Scanner;
 

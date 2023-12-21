@@ -120,5 +120,7 @@ public class HomeTaskSelenium1 {
        WebElement showYenitikili = driver.findElement(By.xpath("(//span[text()='Yeni tikili'])[1]"));
        assertTrue(showYenitikili.isDisplayed());
        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+
     }
 }

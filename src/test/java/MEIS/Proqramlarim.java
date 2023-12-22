@@ -55,8 +55,6 @@ public class Proqramlarim extends Meis_Test_Base {
         WebElement yd = driver.findElement(By.xpath("//*[contains(text(), '" + ydText + "')]"));
         assertTrue(yd.isEnabled());
 
-        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(50));
-
         WebElement fileInput = driver.findElement(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav-content/div/app-programs-control/form/div[3]/div"));
         fileInput.click();
         try {
@@ -173,5 +171,8 @@ public class Proqramlarim extends Meis_Test_Base {
         WebElement testActual = new WebDriverWait(driver, Duration.ofSeconds(50)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(), '" + testiqNot + "')]")));
         System.out.println("testActual = " + testActual);
         checkTextContain(testActual,testiqNot);
+
+        WebElement idareEtme1 = driver.findElement(By.xpath("(//app-menu-item[@class='card ng-star-inserted'])[8]"));
+        idareEtme1.click();
     }
     }

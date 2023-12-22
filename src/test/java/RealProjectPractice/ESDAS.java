@@ -42,7 +42,7 @@ public class ESDAS {
         }
 
         WebElement esdasDaxil;
-        esdasDaxil = new WebDriverWait(driver,Duration.ofSeconds(50)).until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav-content/div/app-programs/div/div[4]/app-program-item[5]/div/div[1]/span")));
+        esdasDaxil = new WebDriverWait(driver,Duration.ofSeconds(50)).until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav-content/div/app-programs/div/div[4]/app-program-item[8]/div/div[1]/span")));
         Thread.sleep(200);
         esdasDaxil.click();
 
@@ -64,12 +64,23 @@ public class ESDAS {
         WebElement daxiliSened = wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@aria-label='Daxili sənəd']")));
         daxiliSened.click();
 
+        WebElement qrup = driver.findElement(By.xpath("(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-uge3vf'])[2]"));
+        qrup.click();
+
+        Thread.sleep(1000);
+
+        String dropDownList = "Ərizələrin qeydiyyatı kitabı- 4-Ə";
+        WebElement dropDownListActual = driver.findElement(By.xpath("//*[contains(text(), '" + dropDownList + "')]"));
+        dropDownListActual.click();
 
 
-        String filePath = "C:\\Users\\User\\Desktop\\TestFiles\\Test.png";
-        WebElement fileInput = wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@type='file']")));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].style.display='block';", fileInput);
-        fileInput.sendKeys(filePath);
+
+
+
+//        String filePath = "C:\\Users\\User\\Desktop\\TestFiles\\Test.png";
+//        WebElement fileInput = wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@type='file']")));
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].style.display='block';", fileInput);
+//        fileInput.sendKeys(filePath);
 
 
 

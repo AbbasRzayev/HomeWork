@@ -1,4 +1,4 @@
-package RealProjectPractice;
+package RealProjectPractice.ESDAS;
 
 import net.bytebuddy.dynamic.scaffold.TypeWriter;
 import org.junit.Test;
@@ -16,7 +16,7 @@ public class ESDAS {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://test.meis.competition.gov.az/auth");
-        WebElement sistemeGirish = driver.findElement(By.xpath("(//img[@class='card_img ng-tns-c139-2'])[2]"));
+        WebElement sistemeGirish = driver.findElement(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav-content/div/app-auth/div/div/div[2]/div"));
         sistemeGirish.click();
         WebElement istifadeGirish = driver.findElement(By.xpath("(//span[@class='mat-button-wrapper'])[2]"));
         Thread.sleep(200);
@@ -68,22 +68,15 @@ public class ESDAS {
         qrup.click();
 
         Thread.sleep(1000);
-
         String dropDownList = "Ərizələrin qeydiyyatı kitabı- 4-Ə";
         WebElement dropDownListActual = driver.findElement(By.xpath("//*[contains(text(), '" + dropDownList + "')]"));
-        dropDownListActual.click();
-
-
-
+                                      dropDownListActual.click();
 
 
 //        String filePath = "C:\\Users\\User\\Desktop\\TestFiles\\Test.png";
 //        WebElement fileInput = wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@type='file']")));
 //        ((JavascriptExecutor) driver).executeScript("arguments[0].style.display='block';", fileInput);
 //        fileInput.sendKeys(filePath);
-
-
-
 
     }
 }

@@ -22,7 +22,8 @@ public class Proqramlarim extends Meis_Test_Base {
 
         sistemeDaxilOL();
         String proq = "Proqramlarım";
-        WebElement proqramlarim = driver.findElement(By.xpath("//*[contains(text(), '" + proq + "')]"));
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(50));
+        WebElement proqramlarim = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(), '" + proq + "')]")));
         implictWait();
         Thread.sleep(1000);
         clickButton(proqramlarim);
@@ -31,18 +32,17 @@ public class Proqramlarim extends Meis_Test_Base {
         clickButton(yeniProqram);
 
         implictWait();
-        WebElement proqraminAdi = driver.findElement(By.cssSelector("input[class='mat-input-element mat-form-field-autofill-control ng-tns-c133-10 ng-untouched ng-pristine ng-invalid cdk-text-field-autofill-monitored']"));
+        WebElement proqraminAdi = driver.findElement(By.id("mat-input-3"));
         proqraminAdi.sendKeys("TestProqram");
 
-        implictWait();
-        WebElement acarSoz = driver.findElement(By.cssSelector("input[class='mat-input-element mat-form-field-autofill-control ng-tns-c133-11 ng-untouched ng-pristine ng-invalid cdk-text-field-autofill-monitored']"));
+
+        WebElement acarSoz = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mat-input-4")));
         acarSoz.sendKeys("TP");
 
-        implictWait();
-        WebElement proqraminUnvani = driver.findElement(By.cssSelector("input[class='mat-input-element mat-form-field-autofill-control ng-tns-c133-12 ng-untouched ng-pristine ng-invalid cdk-text-field-autofill-monitored']"));
+
+        WebElement proqraminUnvani = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"mat-input-5\"]")));
         proqraminUnvani.sendKeys("https://oxu.az/");
 
-        implictWait();
 
         WebElement proqHaqqindaQeyd = driver.findElement(By.id("mat-input-6"));
         proqHaqqindaQeyd.sendKeys("TestQeyd");
@@ -85,17 +85,19 @@ public class Proqramlarim extends Meis_Test_Base {
         WebElement yd1 = driver.findElement(By.xpath("(//span[@class='mat-button-wrapper'])[7]"));
         clickButton(yd1);
 
+        WebElement istifadecSec = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav-content/div/app-control/div/nav/ul/a[1]")));
+        istifadecSec.click();
+
         Thread.sleep(1000);
-        WebElement nameAdd = driver.findElement(By.xpath("//*[@id=\"mat-input-14\"]"));
+        WebElement nameAdd = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mat-input-14")));
         nameAdd.sendKeys("Fərid");
-        WebElement soyadAdd = driver.findElement(By.xpath("//*[@id=\"mat-input-15\"]"));
+        WebElement soyadAdd = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mat-input-15")));
         soyadAdd.sendKeys("imranov");
 
         String axtar = "Axtar";
         WebElement axtarActual = driver.findElement(By.xpath("//*[contains(text(), '" + axtar + "')]"));
         clickButton(axtarActual);
         Thread.sleep(1000);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 
         WebElement nameSurnameActual = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav-content/div/app-control/div/app-users-tab/div[3]/table/tbody/tr")));
         Actions actions = new Actions(driver);
@@ -146,8 +148,9 @@ public class Proqramlarim extends Meis_Test_Base {
         System.out.println("realURl = " + realURl);
 
         Thread.sleep(2000);
-        WebElement idareEtme = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav/div/app-sidebar/div/mat-nav-list/mat-list-item[8]/span")));
+        WebElement idareEtme = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav/div/app-sidebar/div/mat-nav-list/mat-list-item[9]")));
         clickButton(idareEtme);
+
 
         String proqExit = "Proqramlar";
         WebElement proqOut = driver.findElement(By.xpath("//*[contains(text(), '" + proqExit + "')]"));

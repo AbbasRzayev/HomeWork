@@ -56,7 +56,7 @@ public class Meis_Test_Base {
     public void sistemeDaxilOL()
     {
         driver.get("http://test.meis.competition.gov.az/auth");
-        WebElement sistemeGirish = driver.findElement(By.xpath("(//img[@class='card_img ng-tns-c139-2'])[2]"));
+        WebElement sistemeGirish = driver.findElement(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav-content/div/app-auth/div/div/div[2]/div"));
         clickButton(sistemeGirish);
         WebElement istifadeGirish = driver.findElement(By.xpath("(//span[@class='mat-button-wrapper'])[2]"));
         clickButton(istifadeGirish);

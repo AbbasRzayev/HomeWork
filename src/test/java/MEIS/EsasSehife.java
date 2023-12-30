@@ -15,7 +15,7 @@ public class EsasSehife {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://test.meis.competition.gov.az/auth");
-        WebElement sistemeGirish = driver.findElement(By.xpath("(//img[@class='card_img ng-tns-c139-2'])[2]"));
+        WebElement sistemeGirish = driver.findElement(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav/div/app-sidebar/div/mat-nav-list/mat-list-item[8]/span"));
         sistemeGirish.click();
         WebElement istifadeGirish = driver.findElement(By.xpath("(//span[@class='mat-button-wrapper'])[2]"));
         istifadeGirish.click();
